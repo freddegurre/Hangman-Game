@@ -8,9 +8,11 @@ var userGuess = [];
 //computer picks a random word from words
 var computerChoise = words[Math.floor(Math.random() * words.length)];
 
-//Calculate lenght of word and print it to screen need to figure out how to print underscores
-var wordLength = computerChoise.length;
-document.getElementById("length").innerHTML = wordLength;
+//Calculate lenght of word and print it to screen
+//var wordLength = computerChoise.length;
+for (i = 0; i < computerChoise.length; i++ ) {
+    document.write(" _ ")
+}
 
 //store user guess in arrey userGuess and print the guess to screen not complete :) 
 document.onkeyup = function(event) {
