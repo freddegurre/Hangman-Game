@@ -5,10 +5,12 @@ var words = ["elephan", "banana", "zebra", "pig"];
 var userGuess = [];
 
 
-//computer picks a random word
+//computer picks a random word from words
 var computerChoise = words[Math.floor(Math.random() * words.length)];
-var wordLength = computerChoise.length;
 
+//Calculate lenght of word and print it to screen need to figure out how to print underscores
+var wordLength = computerChoise.length;
+document.getElementById("length").innerHTML = wordLength;
 
 //store user guess in arrey userGuess and print the guess to screen not complete :) 
 document.onkeyup = function(event) {
@@ -16,7 +18,6 @@ document.onkeyup = function(event) {
     userGuess.push(event.key);
     userGuess.toString();
     document.getElementById("guess").innerHTML = userGuess;
-    console.log(userGuess)
     }
 
   };
