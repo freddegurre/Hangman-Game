@@ -8,6 +8,9 @@ var userGuess = [];
 //computer picks a random word from words
 var computerChoise = words[Math.floor(Math.random() * words.length)];
 
+//split the computer choise to see if any of userGuess matches 
+var splitChoise = computerChoise.split("");
+
 //Calculate lenght of word and print it to screen
 //var wordLength = computerChoise.length;
 for (i = 0; i < computerChoise.length; i++ ) {
@@ -16,15 +19,27 @@ for (i = 0; i < computerChoise.length; i++ ) {
 
 //store user guess in arrey userGuess and print the guess to screen not complete :) 
 document.onkeyup = function(event) {
-    if (userGuess.indexOf(userGuess) === -1 ){
-    userGuess.push(event.key);
-    userGuess.toString();
-    document.getElementById("guess").innerHTML = userGuess;
+    //If key.event does not match exsisting index in userGuess
+    if (userGuess.indexOf(event.key) === -1 ){
+        
+        //then add key.event to userGuess
+        userGuess.push(event.key);
+
+        //convert user guess to string 
+        userGuess.toString();
+
+        //print the string to the HTML file as a letter that has been guessed
+        document.getElementById("guess").innerHTML = userGuess;
     }
+    else if (splitChoise.indexOf(event.key) >=0) {
+
+      document.getElementById("rightGuess").innerHTML = event.key;
+    }
+    
 
   };
 
-
+console.log(splitChoise);
 
 
   /*for (var i = 0; i < userGuess.length; i++) {
