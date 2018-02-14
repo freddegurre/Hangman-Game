@@ -4,11 +4,10 @@ var words = ["elephan", "banana", "zebra", "pig"];
 //What letter user guesses
 var userGuess = [];
 
-
 //computer picks a random word from words
 var computerChoise = words[Math.floor(Math.random() * words.length)];
 
-//split the computer choise to see if any of userGuess matches 
+//split the computer choise word to single letters 
 var splitChoise = computerChoise.split("");
 
 //Calculate lenght of word and print it to screen
@@ -17,7 +16,7 @@ for (i = 0; i < computerChoise.length; i++ ) {
     document.write(" _ ")
 }
 
-//store user guess in arrey userGuess and print the guess to screen not complete :) 
+//store user guess in arrey userGuess and print the guess to screen 
 document.onkeyup = function(event) {
     //If key.event does not match exsisting index in userGuess
     if (userGuess.indexOf(event.key) === -1 ){
@@ -29,13 +28,14 @@ document.onkeyup = function(event) {
         userGuess.toString();
 
         //print the string to the HTML file as a letter that has been guessed
-        document.getElementById("guess").innerHTML = userGuess;
+        document.getElementById("guess").textContent = userGuess;
     }
-    else if (splitChoise.indexOf(event.key) >=0) {
+    //does the userGuess = any of the strings in splitChoise? 
+    if (splitChoise.indexOf(event.key) >=0) {
+      //if true check index number of matching string in splitChoise array. 
 
-      document.getElementById("rightGuess").innerHTML = event.key;
+      
     }
-    
 
   };
 
