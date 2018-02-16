@@ -8,11 +8,10 @@
 
     <!-- Link to stylesheet reset to clear styles from al browsers -->
     <link rel="stylesheet" href="assets/css/reset.css">
-    <!-- Link to stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+     <!-- Link to stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
     
 </head>
 <body>
@@ -23,15 +22,25 @@
     <div class="row">
         <div class="col-md-6">
             <h2>The letters you have guessed</h2>
-            <p id="guess"></p>
+            <p> Chanses left: <span id="noguess"></span></p>
+            <p> Guessed letters: <span id="wronGuess"></span></p>
         </div>
 
         <div class="col-md-6">
             <h2>The length of word</h2>
             <p id="word"></p>
-
-                <p id="rightGuess"></p>
+            <p id="rightGuess"></p>
         </div>
+    </div>
+    <div class="row" id="margin">
+       <h4>Rules of game!</h4>
+       <ol>
+           <li>Guess a letter</li>
+           <li>You have 9 trys</li>
+           <li>When you have won, reload the page ;)</li>
+           <li>You win if the ammout of right guess characters is same as _</li>
+       </ol>
+
     </div>
 
 
